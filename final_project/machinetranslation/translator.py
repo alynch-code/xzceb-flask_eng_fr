@@ -1,4 +1,5 @@
 """translator module"""
+
 import json
 import os
 from ibm_watson import LanguageTranslatorV3
@@ -18,18 +19,18 @@ language_translator = LanguageTranslatorV3(
 
 language_translator.set_service_url(url)
 
-def english_to_french(english_text):
+def englishToFrench(englishText):
     """Translates English to French using IBM Watson Natural Translator AI"""
     translation = language_translator.translate(
-    text=english_text,
-    model_id='en-fr').get_result()
-    french_text=translation['translations'][0]['translation']
-    return french_text
+    text=englishText,
+    model_id="en-fr").get_result()
+    frenchText=translation['translations'][0]['translation']
+    return frenchText
 
-def french_to_english(french_text):
+def frenchToEnglish(frenchText):
     """Translates French to English using IBM Watson Natural Translator AI"""
     translation = language_translator.translate(
-    text=french_text,
-    model_id='fr-en').get_result()
-    english_text=translation['translations'][0]['translation']
-    return english_text
+    text=frenchText,
+    model_id="fr-en").get_result()
+    englishText=translation['translations'][0]['translation']
+    return englishText
